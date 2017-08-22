@@ -1,0 +1,42 @@
+body{
+    background-image: url("http://static6.businessinsider.com/image/542f096569bedda06e89a60f-1200-706/screen%20shot%202014-10-03%20at%204.33.23%20pm.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+
+#countup{
+    position: absolute;
+    bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#countup h1 {
+    display: inline-block;
+    padding: 5px;
+    background: #f5ff64;
+    margin: 0 0 20px;
+}
+
+#top{
+    position: absolute;
+    top: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#top h1 {
+    background: #3a2dff;
+    padding: 5px;
+    display: inline-block;
+    color: white;
+
+}
