@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stream</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+
+
+</head>
+<body>
+
+<div class="container">
+
+    <div id="top">
+        <h1>Welcome to Basement Party ★★★ | ∞</h1>
+    </div>
+
+    <div id="countup" class="footer">
+        <h1 id="days">00</h1>
+        <h1 class="timeRefDays">days</h1>
+        <h1 id="hours">00</h1>
+        <h1 class="timeRefHours">hours</h1>
+        <h1 id="minutes">00</h1>
+        <h1 class="timeRefMinutes">minutes</h1>
+        <h1 id="seconds">00</h1>
+        <h1 class="timeRefSeconds">second</h1>
+    </div>
+
+</div>
+
+<script>
+    window.onload = function () {
+        // Month,Day,Year,Hour,Minute,Second
+        upTime('aug,25,2017,20:29:00');
+    }
+    function upTime(countTo) {
+        now = new Date();
+        countTo = new Date(countTo);
+        difference = (countTo - now);
+
+        days = Math.floor(difference / (60 * 60 * 1000 * 24) * 1);
+        hours = Math.floor((difference % (60 * 60 * 1000 * 24)) / (60 * 60 * 1000) * 1);
+        mins = Math.floor(((difference % (60 * 60 * 1000 * 24)) % (60 * 60 * 1000)) / (60 * 1000) * 1);
+        secs = Math.floor((((difference % (60 * 60 * 1000 * 24)) % (60 * 60 * 1000)) % (60 * 1000)) / 1000 * 1);
+
+        document.getElementById('days').firstChild.nodeValue = days;
+        document.getElementById('hours').firstChild.nodeValue = hours;
+        document.getElementById('minutes').firstChild.nodeValue = mins;
+        document.getElementById('seconds').firstChild.nodeValue = secs;
+
+        clearTimeout(upTime.to);
+        upTime.to = setTimeout(function () {
+            upTime(countTo);
+        }, 1000);
+    }
+</script>
+
+</body>
+</html>
